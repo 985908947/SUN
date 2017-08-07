@@ -1,0 +1,41 @@
+.wrap{
+    width:400px;
+    height: 400px;
+    border: 1px black solid;
+    margin: auto;
+    text-align: center;
+}
+.myInput{
+    width: 150px;
+    height: 30px;
+    background: rgb(246,246,246);
+    display:block ;
+    margin: 20px auto;
+    border: none;
+}
+.myInput1{
+    width: 150px;
+    height: 30px;
+    background: rgb(246,246,246);
+    display:block;
+    margin: 20px auto;
+    border: none;
+}
+.password{
+    font-size: 12px;
+    margin-left: 100px;
+    color: rgb(44,186,151);
+}
+#theBtn{
+    margin-top: 25px;
+    width: 150px;
+    height: 30px;
+    background: rgb(29,164,122);
+    text-align: center;
+    color: rgb(212,244,237);
+    line-height: 30px;
+    border: none;
+}
+
+
+
