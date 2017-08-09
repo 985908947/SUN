@@ -14,7 +14,6 @@ request.get(options, function (error, response, body) {
     var hostImgArr = []
     var hostTitleArr = []
     var timeImgArr = []
-    var videoImgArr = []
     var movieImgArr = []
     var groupImgArr = []
     // 热点内容
