@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .theWarp {
+        width: 100%;
+        height: 40px;
+        background: rgb(19, 150, 203);
+        line-height: 40px;
+    }
+
+    .title {
+        font-size: 20px;
+        color: white;
+        margin-left: 50px;
+        float: left;
+    }
+
+    .theUl {
+        height: 40px;
+        width: 60%;
+        float: left;
+        margin-left: 20px;
+    }
+
+    .theLi {
+        margin-left: 10px;
+        list-style: none;
+        float: left;
+        font-size: 12px;
+        color: white;
+    }
+    .login{
+        float: right;
+        font-size: 12px;
+        color: white;
+        margin-right: 50px;
+    }
+</style>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const arr = ['编程', '读书', 'Java教程', 'JavaScript教程', 'Python教程', 'Git教程', '问答', '赞助']
+    const element = (
+            <div className="theWarp">
+                <div className="title">廖雪峰的官方网站</div>
+                <ul className="theUl">
+                    {
+                        arr.map(function (item) {
+                            return <li className="theLi">{item}</li>
+                        })
+                    }
+                </ul>
+                <div className="login">登录</div>
+            </div>
+    )
+    ReactDOM.render(element, document.getElementById('root'))
+</script>
+</body>
+</html>
