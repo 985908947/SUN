@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<style>
+    .myDiv{
+        margin: 0 auto;
+        width: 500px;
+        height: 200px;
+        text-align: center;
+    }
+    .thisInput{
+        margin-top: 50px;
+        border: 10px rgb(69,129,163) solid;
+        border-radius: 5px;
+        width: 250px;
+        height: 30px;
+        text-align: center;
+        font-size: 15px;
+        color: rgb(91,94,98);
+        outline:none
+    }
+    .myP{
+        color: rgb(91,94,98);
+        font-size: 20px;
+        font-weight: 500;
+    }
+</style>
+<body>
+<div id="myInput"></div>
+
+<script type="text/babel">
+    var a = true
+    class Input extends React.Component {
+        constructor(props){
+            super(props)
+            this.state = {
+                value: 'Edit Me.'
+            }
+        }
+        changeValue(event) {
+            this.setState({
+                value: event.target.value
+            })
+        }
+//        handleClick(){
+//              if(a){
+//                this.className = 'a'
+//                a = false
+//              }else{
+//                this.className = 'b'
+//                a = true
+//              }
+//        }
+        render() {
+            return (
+                <div>
+                    <div className="myDiv">
+                        <input type="text" value={this.state.value} onChange={this.changeValue.bind(this)} className="thisInput"/>
+                        <p onClick={this.handleClick.bind(this)} className="myP">✎ {this.state.value} </p>
+                    </div>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Input />,
+        document.getElementById('myInput')
+    )
+
+</script>
+</body>
+</html>
