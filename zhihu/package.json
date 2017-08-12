@@ -1,0 +1,21 @@
+{
+  "name": "zhihu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-standalone": "^6.25.0",
+    "cheerio": "^1.0.0-rc.2",
+    "phantomjs": "^2.1.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "request": "^2.81.0",
+    "require": "^2.4.20",
+    "webpage": "^0.3.0"
+  }
+}

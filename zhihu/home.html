@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top {
+        margin: 0 auto;
+        width: 700px;
+        line-height: 78px;
+        position: relative;
+    }
+
+    .logo {
+        display: inline-block;
+        height: 78px;
+        color: blue;
+        width: 220px;
+    }
+
+    .span1 {
+        position: absolute;
+        right: 150px;
+        font-size: 15px;
+    }
+
+    .span2 {
+        position: absolute;
+        right: 5px;
+        font-size: 15px;
+    }
+
+    .Download {
+        width: 100%;
+        height: 350px;
+        background: rgb(14, 119, 237);
+        position: relative;
+    }
+
+    .DImg {
+        height: 340px;
+        width: 310px;
+        position: absolute;
+        bottom: 0;
+        left: 180px;
+    }
+
+    .DRight {
+        float: right;
+        margin-top: 60px;
+        width: 400px;
+        margin-right: 20px;
+    }
+
+    .DRight p {
+        width: 310px;
+        color: #99d1f8;
+        font-size: 14px;
+    }
+
+    .DRight h1 {
+        color: white;
+        font-weight: 300;
+    }
+
+    .DRight_bottom {
+        margin-top: 40px;
+        width: 400px;
+    }
+
+    .DRight_bottom_right {
+        display: inline-block;
+        margin-left: 20px;
+        position: relative;
+        width: 160px;
+        height: 120px;
+    }
+
+    .IOS {
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 50px;
+        background: white;
+        font-size: 18px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 3px;
+    }
+
+    .Android {
+        width: 150px;
+        height: 50px;
+        background: white;
+        font-size: 18px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 3px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .content_wrap {
+        width: 790px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .conLeft {
+        width: 250px;
+        display: inline-block;
+
+    }
+
+    .conMiddle {
+        width: 250px;
+        display: inline-block;
+        margin-left: 20px;
+
+    }
+
+    .conRight {
+        width: 250px;
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .conWarp {
+        margin-bottom: 15px;
+        width: 210px;
+        padding: 15px;
+        background: gainsboro;
+    }
+
+    .conImg {
+        width: 210px;
+        height: 210px;
+
+    }
+
+</style>
+<body>
+<div id="header"></div>
+<div id="download"></div>
+<div id="content"></div>
+<script type="text/babel">
+    const contentImgArr1 = [
+        'image/1.jpg', 'image/2.jpg', 'image/3.jpg', 'image/4.jpg', 'image/5.jpg', 'image/6.jpg', 'image/7.jpg', 'image/8.jpg', 'image/9.jpg', 'image/10.jpg']
+    const contentWordArr = [
+        '这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件','这 15 个重点，可以帮你写出得体的电子邮件'
+    ]
+    const contentImgArr2 = [
+        'image/11.jpg', 'image/12.jpg', 'image/13.jpg', 'image/14.jpg', 'image/15.jpg', 'image/16.jpg', 'image/17.jpg', 'image/18.jpg', 'image/19.jpg', 'image/20.jpg'
+    ]
+    const contentImgArr3 = [
+        'image/21.jpg', 'image/22.jpg', 'image/23.jpg', 'image/24.jpg', 'image/25.jpg', 'image/26.jpg', 'image/27.jpg', 'image/28.jpg', 'image/29.jpg', 'image/0.jpg'
+    ]
+
+
+    class Header extends React.Component {
+        render() {
+            return (
+                    <div className="top">
+                        <h2 className="logo">知乎日报</h2>
+                        <span className="span1">App 下载</span>
+                        <span className="span2">浏览内容</span>
+                    </div>
+            )
+        }
+    }
+    class Download extends React.Component {
+        render() {
+            return (
+                    <div className="Download">
+                        <img src="image/phone_sample.png" className="DImg"/>
+                        <div className="DRight">
+                            <h1>每天三次 每次七分钟</h1>
+                            <p>在中国，资讯类移动应用的人均阅读时长是 5 分钟，而在知乎日报，这个数字是 21。</p>
+                            <div className="DRight_bottom">
+                                <img src="image/qr_top2.png" height="120px" width="120px"/>
+                                <div className="DRight_bottom_right">
+                                    <div className="IOS">IOS版</div>
+                                    <div className="Android">Android 版</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            )
+        }
+    }
+    class Content extends React.Component {
+        render() {
+            return (
+                    <div>
+                        <div className="content_wrap">
+                            <div className="conLeft">
+
+                                {
+                                    contentImgArr1.map(function (item) {
+                                        return <div className="conWarp"><img className="conImg" src={item}/></div>
+                                    })
+                                }
+
+                            </div>
+                            <div className="conMiddle">
+
+                                {
+                                    contentImgArr2.map(function (item) {
+                                        return <div className="conWarp"><img className="conImg" src={item}/></div>
+                                    })
+                                }
+
+                            </div>
+                            <div className="conRight">
+
+                                {
+                                    contentImgArr3.map(function (item) {
+                                        return <div className="conWarp"><img className="conImg" src={item}/></div>
+                                    })
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+            <Header/>,
+        document.getElementById('header')
+    )
+    ReactDOM.render(
+            <Download/>,
+        document.getElementById('download')
+    )
+    ReactDOM.render(
+            <Content/>,
+        document.getElementById('content')
+    )
+
+
+</script>
+</body>
+</html>
