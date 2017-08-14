@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<style>
+    .head {
+        width: 100%;
+        height: 30px;
+        background: deepskyblue;
+        position: relative;
+    }
+
+    .list_logo {
+        position: absolute;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+    }
+
+    .grid_logo {
+        position: absolute;
+        right: 35px;
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+    }
+
+    .list_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .list_p {
+        display: inline-block;
+    }
+    .grid_wrap{
+        width: 410px;
+        margin: auto;
+    }
+    .grid_img{
+        width: 200px;
+        height: 200px;
+        float: left;
+        margin-left: 5px;
+    }
+</style>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+    const arr = [
+        {
+            img: 'https://tutorialzine.com/media/2016/03/css-variables.jpg',
+            title: "What You Need To Know About CSS Variables"
+        },
+        {
+            img: 'https://tutorialzine.com/media/2016/02/great-looking-pricing-tables.jpg',
+            title: "What You Need To Know About CSS Variables"
+        },
+        {
+            img: 'https://tutorialzine.com/media/2016/02/interesting-resources-february.jpg',
+            title: "What You Need To Know About CSS Variables"
+        },
+        {
+            img: 'https://tutorialzine.com/media/2016/02/quick-tip-responsive-headers.png',
+            title: "What You Need To Know About CSS Variables"
+        },
+        {
+            img: 'https://tutorialzine.com/media/2016/01/learn-sql-20-minutes.png',
+            title: "What You Need To Know About CSS Variables"
+        },
+        {
+            img: 'https://tutorialzine.com/media/2015/12/creating-your-first-desktop-app-with-electron.png',
+            title: "What You Need To Know About CSS Variables"
+        },
+    ]
+    class Header extends React.Component {
+        render() {
+            return (
+                    <div className="head">
+                        <img className="list_logo" src="./list.png" onClick={this.props.click}/>
+                        <img className="grid_logo" src="./grade.png" onClick={this.props.click}/>
+                    </div>
+            )
+        }
+    }
+    class List extends React.Component {
+        render() {
+            return (
+                <div>
+                    {
+                        arr.map(function (item) {
+                            return <div>
+                                <img className="list_img" src={item.img}/>
+                                <p className="list_p">{item.title}</p>
+                                <hr/>
+                            </div>
+                        })
+                    }
+                </div>
+            )
+        }
+    }
+    class Grid extends React.Component {
+        render(){
+            return (
+                    <div>
+                        {
+                            arr.map(function (item) {
+                                return <div className="grid_wrap">
+                                    <img className="grid_img" src={item.img}/>
+                                </div>
+                            })
+                        }
+                    </div>
+
+            )
+        }
+    }
+    class LayoutControl extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                layout: true
+            }
+        }
+        // 按钮点击事件
+        layClick = () => {
+            this.setState({
+                layout: !this.state.layout
+            })
+            console.log(123)
+        }
+
+        render() {
+            const state = this.state.layout
+            if (state) {
+                return (
+                    <div>
+                        <Header click={this.layClick}/>
+                        <Grid/>
+                    </div>
+                )
+
+            } else {
+                return (
+                        <div>
+                            <Header click={this.layClick}/>
+                            <List/>
+                        </div>
+                )
+            }
+
+        }
+    }
+
+    ReactDOM.render(
+            <LayoutControl/>,
+        document.getElementById('root')
+    )
+</script>
+
+</body>
+</html>
